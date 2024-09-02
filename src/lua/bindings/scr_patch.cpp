@@ -27,7 +27,6 @@ namespace lua::scr_patch
 
 	scr_patch::~scr_patch()
 	{
-		disable();
 		big::g_script_patcher_service->remove_patch(m_patch_name);
 	}
 
@@ -36,7 +35,7 @@ namespace lua::scr_patch
 		if (!m_enable)
 		{
 			m_enable = true;
-			big::g_script_patcher_service->update_all_patches_for_script(m_script);
+			big::g_script_patcher_service->update();
 		}
 	}
 
@@ -45,7 +44,7 @@ namespace lua::scr_patch
 		if (m_enable)
 		{
 			m_enable = false;
-			big::g_script_patcher_service->update_all_patches_for_script(m_script);
+			big::g_script_patcher_service->update();
 		}
 	}
 
