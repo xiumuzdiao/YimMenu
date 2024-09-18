@@ -3,7 +3,7 @@
 #include "gta_pointers_layout_info.hpp"
 #include "sc_pointers_layout_info.hpp"
 
-#define GTA_VERSION_TARGET "1.69-3274"
+#define GTA_VERSION_TARGET "1.69-3323"
 
 namespace big
 {
@@ -1976,6 +1976,15 @@ namespace big
             [](memory::handle ptr)
             {
                 g_pointers->m_gta.m_get_last_keyboard_state = ptr.as<functions::get_last_keyboard_state>();
+            }
+        },
+        // Network Can Access Multiplayer
+        {
+            "NCAM",
+            "E8 ? ? ? ? 8B 54 24 30 89 13",
+            [](memory::handle ptr)
+            {
+                g_pointers->m_gta.m_network_can_access_multiplayer = ptr.add(1).rip().as<PVOID>();
             }
         }
         >(); // don't leave a trailing comma at the end
