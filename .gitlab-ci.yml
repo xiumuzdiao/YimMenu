@@ -1,59 +1,32 @@
-name: CI
+stages:
+  - build
 
-on:
-  pull_request:
+variables:
+  BUILD_DIR: build
+
+build:
+  stage: build
+  tags:
+    - windows
+  script:
+    - echo "Checking out code"
+    - git clone $CI_REPOSITORY_URL
+    - echo "Checking CMake version"
+    - cmake --version
+    - echo "Setting up MSVC environment"
+    - call "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/Tools/VsDevCmd.bat"
+    - echo "Generating CMake project"
+    - cmake -D CMAKE_BUILD_TYPE=RelWithDebInfo -D OPTIMIZE=YES -S . -B $BUILD_DIR -G Ninja
+    - echo "Building 64bit release DLL"
+    - cmake --build $BUILD_DIR --config RelWithDebInfo --target YimMenu --
+    - echo "Checking if DLL got built"
+    - if not exist $BUILD_DIR/YimMenu.dll exit 1
+    - echo "Renaming DLL"
+    - del YimMenu-dev-*.dll
+    - del YimMenu-dev-*.pdb
+    - rename $BUILD_DIR/YimMenu.dll YimMenu-dev-%CI_COMMIT_SHA%.dll
+    - rename $BUILD_DIR/YimMenu.pdb YimMenu.pdb
+  artifacts:
     paths:
-      - src/**
-      - cmake/**
-      - CMakeLists.txt
-      - .github/workflows/ci.yml
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
-jobs:
-  ci:
-    runs-on: [self-hosted, Windows]
-    name: CI
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Check CMake version
-        run: cmake --version
-
-      - name: Setup MSVC environment
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: amd64
-
-      - name: Generate CMake project
-        run: cmake -D CMAKE_BUILD_TYPE=RelWithDebInfo -D OPTIMIZE=YES -S. -Bbuild -G Ninja
-
-      - name: Build 64bit release DLL
-        run: cmake --build ./build --config RelWithDebInfo --target YimMenu --
-
-      - name: Check if DLL got built
-        run: if (-Not (Test-Path -path "build/YimMenu.dll")) {throw 1}
-
-      - name: Rename DLL to YimMenu-dev-{GITHUB_SHA}.dll
-        run: |
-          del YimMenu-dev-*.dll
-          del YimMenu-dev-*.pdb
-          ren YimMenu.dll YimMenu-dev-${{github.sha}}.dll
-          ren YimMenu.pdb YimMenu.pdb
-        working-directory: build/
-
-      - name: Upload Artifact (dll)
-        uses: actions/upload-artifact@v3
-        with:
-          name: binary
-          path: |
-            build/YimMenu-dev-*.dll
-      - name: Upload Artifact (pdb)
-        uses: actions/upload-artifact@v3
-        with:
-          name: pdb
-          path: |
-            build/YimMenu.pdb
-
+      - $BUILD_DIR/YimMenu-dev-*.dll
+      - $BUILD_DIR/YimMenu.pdb
