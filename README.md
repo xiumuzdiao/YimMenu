@@ -18,14 +18,14 @@ So here I am with an up-to-date menu focusing on protecting the user from toxic 
  
 ## How to compile YimMenu
 
-Read the [SETUP](https://github.com/YimMenu/YimMenu/wiki/Setup-your-PC-for-YimMenu-Development) guide.
+Read the [SETUP](https://gitlab.com/YimMenu/YimMenu/wiki/Setup-your-PC-for-YimMenu-Development) guide.
 
 ## Make your own flavour of YimMenu
 
-Fork YimMenu and git clone that repository instead of https://github.com/YimMenu/YimMenu.git
+Fork YimMenu and git clone that repository instead of https://gitlab.com/YimMenu/YimMenu.git
 
 Click the below link to make your own fork of YimMenu:
-https://github.com/YimMenu/YimMenu/fork
+https://gitlab.com/YimMenu/YimMenu/fork
   
 ## Staying Up To Date
 
@@ -39,7 +39,7 @@ git pull
 
 CMake should be handling removed / added files automatically without any user input.
 
-If this is not the case for some reason you'll have to redo the steps in the [Making changes to the source code section of the SETUP](https://github.com/YimMenu/YimMenu/wiki/Setup-your-PC-for-YimMenu-Development#making-changes-to-the-source-code).
+If this is not the case for some reason you'll have to redo the steps in the [Making changes to the source code section of the SETUP](https://gitlab.com/YimMenu/YimMenu/wiki/Setup-your-PC-for-YimMenu-Development#making-changes-to-the-source-code).
 
 If you are doing custom modifications to the codebase and have a fork you are on your own for staying up to date with upstream (this repository), google stuff like "merge from upstream" and learn how to use Git.
 
