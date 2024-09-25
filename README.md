@@ -1,4 +1,4 @@
-Author: https://github.com/YimMenu/YimMenu
+Author: https://github.com/YimMenu or https://gitlab.com/YimMenu
 
 Files source: https://gitlab.com/YimMenu/YimMenu
 
