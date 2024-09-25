@@ -1,3 +1,7 @@
+Author: https://github.com/YimMenu/YimMenu
+
+Files source: https://gitlab.com/YimMenu/YimMenu
+
 # YimMenu
 
 ![](https://img.shields.io/badge/dynamic/json?color=ffab00&label=Online%20Version&query=%24.game.online&url=https://gitlab.com/YimMenu/YimMenu/-/raw/master/metadata.json?ref_type=heads&style=flat-square&labelColor=000000) ![](https://img.shields.io/badge/dynamic/json?color=ffab00&label=Game%20Build&query=%24.game.build&url=https://gitlab.com/YimMenu/YimMenu/-/raw/master/metadata.json?ref_type=heads&style=flat-square&labelColor=000000)
