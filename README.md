@@ -2,6 +2,8 @@ Author: https://github.com/YimMenu or https://gitlab.com/YimMenu
 
 Files source: https://gitlab.com/YimMenu/YimMenu
 
+This code base is only a backup resource. The original author's code has been deleted. This code is only for learning purposes. The security and availability of the code are not guaranteed.
+
 # YimMenu
 
 ![](https://img.shields.io/badge/dynamic/json?color=ffab00&label=Online%20Version&query=%24.game.online&url=https://gitlab.com/YimMenu/YimMenu/-/raw/master/metadata.json?ref_type=heads&style=flat-square&labelColor=000000) ![](https://img.shields.io/badge/dynamic/json?color=ffab00&label=Game%20Build&query=%24.game.build&url=https://gitlab.com/YimMenu/YimMenu/-/raw/master/metadata.json?ref_type=heads&style=flat-square&labelColor=000000)
