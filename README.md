@@ -6,6 +6,14 @@ Author's latest version file update address：https://www.unknowncheats.me/forum
 
 This code base is only a backup resource. The original author's code has been deleted. This code is only for learning purposes. The security and availability of the code are not guaranteed. So far, the original author is still updating, and the update address can be found in the above link.
 
+# Author's note (from Unknowncheats by Yimura)
+
+The YimMenu source code has been partially DMCA'd, as a precaution we have taken down the whole repository and its contents.
+
+In the future we'll be working towards adding parts of the code base online again (mainly the Lua documentation).
+
+For now we'll be moving to binary releases only via UnknownCheats, DLL files being shared outside of UC should never be trusted unless you know and trust the person.
+
 # YimMenu
 
 This release is made for GTA V 1.69 b3337
