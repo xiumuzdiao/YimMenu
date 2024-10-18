@@ -1,3 +1,5 @@
+# Editor's note 
+
 Author: https://github.com/YimMenu or https://gitlab.com/YimMenu
 
 Files source: https://gitlab.com/YimMenu/YimMenu
@@ -5,6 +7,8 @@ Files source: https://gitlab.com/YimMenu/YimMenu
 Author's latest version file update address：https://www.unknowncheats.me/forum/grand-theft-auto-v/476972-yimmenu-1-69-b3337.html
 
 This code base is only a backup resource. The original author's code has been deleted. This code is only for learning purposes. The security and availability of the code are not guaranteed. So far, the original author is still updating, and the update address can be found in the above link.
+
+⚠ Recently, **Rockstar has updated GTAOL**. The latest version is **b3351**. It is unclear whether this version (b3337) is applicable.
 
 # Author's note (from Unknowncheats by Yimura)
 
